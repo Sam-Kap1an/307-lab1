@@ -20,7 +20,7 @@ import Form from "./Form";
     }
   
   function removeOneCharacter(index) {
-    const id  = characters[index].id
+    const id  = characters[index]._id
     deleteByUser(id)
       .then((res) => {
         if(res.status === 204){
@@ -40,9 +40,6 @@ import Form from "./Form";
     return promise;
   }
 
-  function updateList(person) {
-    setCharacters([...characters, person]);
-  }
   
   function postUser(person) {
     const promise = fetch("Http://localhost:8000/users", {
