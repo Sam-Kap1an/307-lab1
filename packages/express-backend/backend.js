@@ -15,17 +15,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/users?name=<name>&job=<job>", async (req, res) => {
-  const name = req.query["name"];
-  const job = req.query["job"];
-  const result = await userServices.getUsersWithNameAndJob(name, job);
-  if (result === undefined || result === null)
-    res.status(404).send("Resource not found.");
-  else {
-    res.send({ users_list: result });
-  }
-});
-
 app.get("/users", async (req, res) => {
   const name = req.query["name"];
   const job = req.query["job"];

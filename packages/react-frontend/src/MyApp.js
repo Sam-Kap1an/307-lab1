@@ -40,7 +40,6 @@ import Form from "./Form";
     return promise;
   }
 
-  
   function postUser(person) {
     const promise = fetch("Http://localhost:8000/users", {
       method: "POST",
